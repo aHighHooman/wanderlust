@@ -45,13 +45,13 @@ nav {
 }
 
 nav .container {
-    display: flex; /* Enable flexbox for nav container */
-    justify-content: space-between; /* Space out menu toggle and nav links */
-    align-items: center; /* Vertically align items in nav container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .menu-toggle {
-    display: none; /* Initially hide menu toggle on desktop */
+    display: none;
 }
 
 nav ul {
@@ -335,6 +335,17 @@ footer {
     footer {
         padding: 15px 0;
         font-size: 0.8em;
+    }
+
+    /* Project Detail Page Specific Styles (Mobile Image Scaling) */
+    .project-hero-image {
+        max-width: 100%; /* Make hero image scale down to container width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .project-visuals-grid img {
+        max-width: 100%; /* Make images in visuals grid scale down */
+        height: auto;
     }
 }
 
