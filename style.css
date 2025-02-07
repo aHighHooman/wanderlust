@@ -342,3 +342,179 @@ a:hover {
     /*border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }*/
+
+
+ @media (max-width: 768px) {
+     .container {
+         width: 95%; /* Wider container on mobile */
+         padding: 10px 0;
+     }
+
+     header {
+         padding-top: 20px;
+         padding-bottom: 20px;
+     }
+
+     header h1 {
+         font-size: 2em; /* Smaller header font on mobile */
+     }
+
+     header p {
+         font-size: 1em; /* Smaller subtitle font on mobile */
+     }
+
+     nav ul {
+         text-align: left; /* Align navigation to left on mobile */
+     }
+
+     nav li {
+         display: block; /* Stack navigation links vertically on mobile */
+         padding: 10px 0;
+         text-align: left;
+     }
+
+     nav a {
+         font-size: 1em; /* Adjust nav link font size on mobile */
+         display: block; /* Make nav links full width for easier tapping */
+         padding: 5px 15px;
+     }
+
+     #hero {
+         padding: 40px 0; /* Less padding for hero on mobile */
+     }
+
+     #hero h2 {
+         font-size: 1.8em; /* Smaller hero title on mobile */
+     }
+
+     #hero p {
+         font-size: 1em; /* Smaller hero text on mobile */
+     }
+
+     .projects-grid {
+         grid-template-columns: 1fr; /* Single column project grid on mobile */
+     }
+
+     .about-content {
+         flex-direction: column; /* Stack about content vertically on mobile */
+         text-align: center; /* Center align text in about section on mobile */
+     }
+
+     .profile-pic {
+         width: 150px; /* Smaller profile pic on mobile */
+         height: 150px;
+         margin-bottom: 20px; /* Add margin below profile pic */
+     }
+
+     .about-text p {
+         font-size: 1em; /* Smaller about text on mobile */
+     }
+
+     #resume .resume-embed iframe {
+         height: 600px; /* Adjust iframe height for mobile */
+     }
+
+     #projects h2, #resume h2, #about h2, #contact h2 {
+         font-size: 1.7em; /* Smaller section titles on mobile */
+         margin-bottom: 25px;
+     }
+
+     section {
+         padding: 40px 0; /* Less section padding on mobile */
+     }
+
+     footer {
+         padding: 15px 0; /* Less footer padding on mobile */
+         font-size: 0.8em; /* Smaller footer font on mobile */
+     }
+ }
+ ```
+
+ **Code to add (at the end of `style.css`):**
+
+ ```css
+ /* --- Media Queries for Mobile Responsiveness --- */
+ @media (max-width: 768px) {
+     .container {
+         width: 95%; /* Wider container on mobile */
+         padding: 10px 0;
+     }
+
+     header {
+         padding-top: 20px;
+         padding-bottom: 20px;
+     }
+
+     header h1 {
+         font-size: 2em; /* Smaller header font on mobile */
+     }
+
+     header p {
+         font-size: 1em; /* Smaller subtitle font on mobile */
+     }
+
+     nav ul {
+         text-align: left; /* Align navigation to left on mobile */
+     }
+
+     nav li {
+         display: block; /* Stack navigation links vertically on mobile */
+         padding: 10px 0;
+         text-align: left;
+     }
+
+     nav a {
+         font-size: 1em; /* Adjust nav link font size on mobile */
+         display: block; /* Make nav links full width for easier tapping */
+         padding: 5px 15px;
+     }
+
+     #hero {
+         padding: 40px 0; /* Less padding for hero on mobile */
+     }
+
+     #hero h2 {
+         font-size: 1.8em; /* Smaller hero title on mobile */
+     }
+
+     #hero p {
+         font-size: 1em; /* Smaller hero text on mobile */
+     }
+
+     .projects-grid {
+         grid-template-columns: 1fr; /* Single column project grid on mobile */
+     }
+
+     .about-content {
+         flex-direction: column; /* Stack about content vertically on mobile */
+         text-align: center; /* Center align text in about section on mobile */
+     }
+
+     .profile-pic {
+         width: 150px; /* Smaller profile pic on mobile */
+         height: 150px;
+         margin-bottom: 20px; /* Add margin below profile pic */
+     }
+
+     .about-text p {
+         font-size: 1em; /* Smaller about text on mobile */
+     }
+
+     #resume .resume-embed iframe {
+         height: 600px; /* Adjust iframe height for mobile */
+     }
+
+     #projects h2, #resume h2, #about h2, #contact h2 {
+         font-size: 1.7em; /* Smaller section titles on mobile */
+         margin-bottom: 25px;
+     }
+
+     section {
+         padding: 40px 0; /* Less section padding on mobile */
+     }
+
+     footer {
+         padding: 15px 0; /* Less footer padding on mobile */
+         font-size: 0.8em; /* Smaller footer font on mobile */
+     }
+ }
