@@ -392,7 +392,10 @@ a:hover {
      }
 
      .projects-grid {
-         grid-template-columns: 1fr; /* Single column project grid on mobile */
+         .projects-grid {      
+             grid-template-columns: repeat(2, 1fr); /* Two column project grid on mobile */      
+             gap: 15px; /* Reduce gap slightly for two columns */  
+         } /* Single column project grid on mobile */
      }
 
      .about-content {
@@ -482,7 +485,7 @@ a:hover {
      }
 
      .projects-grid {
-         grid-template-columns: 1fr; /* Single column project grid on mobile */
+         .projects-grid {      grid-template-columns: repeat(2, 1fr); /* Two column project grid on mobile */      gap: 15px; /* Reduce gap slightly for two columns */  } /* Single column project grid on mobile */
      }
 
      .about-content {
