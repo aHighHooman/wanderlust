@@ -17,18 +17,31 @@
 
     <nav>
         <div class="container">
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
             <ul>
-                <li><a href="#" onclick="toggleSection('projects'); return false;">Projects</a></li>
-                <li><a href="#" onclick="toggleSection('resume'); return false;">Resume</a></li>
-                <li><a href="#" onclick="toggleSection('about'); return false;">About Me</a></li>
-                <li><a href="#" onclick="toggleSection('contact'); return false;">Contact</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <div id="projects-section" class="collapsible-section"> <section id="projects">
-            <div class="container">
-                <h2>Projects</h2>
+    <section id="hero">
+        <div class="container">
+            <h2>Powering Innovation</h2>
+            <p>A passionate electrical engineering student with a drive to design and build the future.</p>
+            <a href="#projects" class="button">View Projects</a>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
             <div class="projects-grid">
                 <a href="lightRender.html" class="project-card-link">
                     <div class="project-card">
@@ -53,67 +66,52 @@
                 </a>
                 </div>
             </div>
-        </section> </div>
+    </section>
 
-    <div id="resume-section" class="collapsible-section"> <section id="resume">
-            <div class="container">
-                <h2>Resume</h2>
-                <div class="resume-embed">
-                    <iframe src="resume.pdf" width="100%" height="800px"></iframe>
-                    <p><a href="resume.pdf" class="button" download>Download Resume</a></p>
+    <section id="resume">
+        <div class="container">
+            <h2>Resume</h2>
+            <div class="resume-embed">
+                <iframe src="resume.pdf" width="100%" height="800px"></iframe>
+                <p><a href="resume.pdf" class="button" download>Download Resume</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="images/profile.jpg" alt="Your Profile Picture" class="profile-pic">
+                <div class="about-text">
+                    <p>Hello! I'm Umair Aadil.</p>
                 </div>
             </div>
-        </section> </div>
+        </div>
+    </section>
 
-    <div id="about-section" class="collapsible-section"> <section id="about">
-            <div class="container">
-                <h2>About Me</h2>
-                <div class="about-content">
-                    <img src="images/profile.jpg" alt="Your Profile Picture" class="profile-pic">
-                    <div class="about-text">
-                        <p>Hello! I'm Umair Aadil.</p>
-                    </div>
-                </div>
-            </div>
-        </section> </div>
-
-    <div id="contact-section" class="collapsible-section"> <section id="contact">
-            <div class="container">
-                <h2>Contact</h2>
-                <div class="contact-info">
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-info">
                 <p>Email: <a href="mailto:umair.fatimi19@gmail.com"></a>umair.fatimi19@gmail.com</p>
                 <p>LinkedIn: <a href="https://www.linkedin.com/in/umair-fatimi" target="_blank">umair-fatimi</a></p>
                 <p>GitHub: <a href="https://github.com/aHighHooman" target="_blank">aHighHooman</a></p>
-                </div>
             </div>
-        </section> </div>
+            </div>
+    </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 [Your Name]. All rights reserved.</p>
+            <p>&copy; 2025 Umair Aadil. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        function toggleSection(sectionId) {
-            const section = document.getElementById(sectionId + '-section');
-            if (section.style.display === 'none' || section.style.display === '') {
-                section.style.display = 'block';
-            } else {
-                section.style.display = 'none';
-            }
-        }
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('menu-open');
+        });
     </script>
 
 </body>
 </html>
-
-<!--
-<section id="hero">
-    <div class="container">
-        <h2>Powering Innovation</h2>
-        <p>A passionate electrical engineering student with a drive to design and build the future.</p>
-        <a href="#projects" class="button">View Projects</a>
-    </div>
-</section>
--->
