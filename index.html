@@ -18,83 +18,102 @@
     <nav>
         <div class="container">
             <ul>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" onclick="toggleSection('projects'); return false;">Projects</a></li>
+                <li><a href="#" onclick="toggleSection('resume'); return false;">Resume</a></li>
+                <li><a href="#" onclick="toggleSection('about'); return false;">About Me</a></li>
+                <li><a href="#" onclick="toggleSection('contact'); return false;">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    
-
-    <section id="projects">
+    <section id="hero">
         <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <a href="lightRender.html" class="project-card-link">
-                    <div class="project-card">
-                        <img src="images/lightRender.PNG" alt="Project 1 Thumbnail">
-                        <h3>Light Rendering</h3>
-                        <p>A project about simulating light rays</p>
-                    </div>
-                </a>
-                <a href="mapGeneration.html" class="project-card-link">
-                    <div class="project-card">
-                        <img src="images/MapGeneration.PNG" alt="Project 2 Thumbnail">
-                        <h3>Map Generation</h3>
-                        <p>A project to generate random maps and topologies</p>
-                    </div>
-                </a>
-                <a href="NPC.html" class="project-card-link">
-                    <div class="project-card">
-                        <img src="images/NPC.PNG" alt="Project 3 Thumbnail">
-                        <h3>Non-Player Characters</h3>
-                        <p>A project to simulate more realistic non-player characters</p>
-                    </div>
-                </a>
-                </div>
+            <h2>Powering Innovation</h2>
+            <p>A passionate electrical engineering student with a drive to design and build the future.</p>
+            <a href="#" onclick="toggleSection('projects'); return false;" class="button">View Projects</a>
         </div>
     </section>
 
-    <section id="resume">
-        <div class="container">
-            <h2>Resume</h2>
-            <div class="resume-embed">
-                <iframe src="resume.pdf" width="100%" height="800px"></iframe>
-                <p><a href="resume.pdf" class="button" download>Download Resume</a></p>
+    <div id="projects-section" class="collapsible-section"> <section id="projects">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="projects-grid">
+                    <a href="project1.html" class="project-card-link">
+                        <div class="project-card">
+                            <img src="images/project1-thumb.jpg" alt="Project 1 Thumbnail">
+                            <h3>Project Title 1</h3>
+                            <p>Brief project description.</p>
+                        </div>
+                    </a>
+                    <a href="project2.html" class="project-card-link">
+                        <div class="project-card">
+                            <img src="images/project2-thumb.jpg" alt="Project 2 Thumbnail">
+                            <h3>Project Title 2</h3>
+                            <p>Brief project description.</p>
+                        </div>
+                    </a>
+                    <a href="project3.html" class="project-card-link">
+                        <div class="project-card">
+                            <img src="images/project3-thumb.jpg" alt="Project 3 Thumbnail">
+                            <h3>Project Title 3</h3>
+                            <p>Brief project description.</p>
+                        </div>
+                    </a>
+                    </div>
             </div>
-        </div>
-    </section>
+        </section> </div>
 
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <img src="images/profile.jpg" alt="Your Profile Picture" class="profile-pic">
-                <div class="about-text">
-                    <p>Hello! I'm Umair Aadil</p>
+    <div id="resume-section" class="collapsible-section"> <section id="resume">
+            <div class="container">
+                <h2>Resume</h2>
+                <div class="resume-embed">
+                    <iframe src="resume.pdf" width="100%" height="800px"></iframe>
+                    <p><a href="resume.pdf" class="button" download>Download Resume</a></p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section> </div>
 
-    <section id="contact">
-        <div class="container">
-            <h2>Contact</h2>
-            <div class="contact-info">
-                <p>Email: <a href="mailto:umair.fatimi19@gmail.com"></a>umair.fatimi19@gmail.com</p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/umair-fatimi" target="_blank">umair-fatimi</a></p>
-                <p>GitHub: <a href="https://github.com/aHighHooman" target="_blank">aHighHooman</a></p>
+    <div id="about-section" class="collapsible-section"> <section id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <img src="images/profile.jpg" alt="Your Profile Picture" class="profile-pic">
+                    <div class="about-text">
+                        <p>Hello! I'm [Your Name], an electrical engineering student passionate about [mention your specific interests in EE, e.g., embedded systems, power electronics, renewable energy]. I am currently studying at [Your University] and eager to apply my knowledge to real-world challenges.</p>
+                        <p>My skills include [list key skills, e.g., Circuit Design, PCB Design, Microcontrollers, Python, MATLAB]. I am always learning and exploring new technologies in the ever-evolving field of electrical engineering.</p>
+                        <p>Outside of academics, I enjoy [mention hobbies or interests].</p>
+                    </div>
+                </div>
             </div>
-            </div>
-    </section>
+        </section> </div>
+
+    <div id="contact-section" class="collapsible-section"> <section id="contact">
+            <div class="container">
+                <h2>Contact</h2>
+                <div class="contact-info">
+                    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                    <p>LinkedIn: <a href="[Your LinkedIn Profile URL]" target="_blank">linkedin.com/in/[yourlinkedin]</a></p>
+                    <p>GitHub: <a href="[Your GitHub Profile URL]" target="_blank">github.com/[yourgithub]</a></p>
+                </div>
+                </div>
+        </section> </div>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Umair Aadil. All rights reserved.</p>
+            <p>&copy; 2025 [Your Name]. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId + '-section');
+            if (section.style.display === 'none' || section.style.display === '') {
+                section.style.display = 'block';
+            } else {
+                section.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 </html>
