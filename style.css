@@ -1,4 +1,7 @@
 /* style.css */
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling for the whole page */
+}
 
 body {
     font-family: 'Roboto', sans-serif; /* Example font, consider Open Sans, Lato */
