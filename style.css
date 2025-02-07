@@ -1,15 +1,15 @@
 /* style.css */
 
 html {
-    scroll-behavior: smooth; /* Enables smooth scrolling for the whole page */
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Roboto', sans-serif; /* Example font, consider Open Sans, Lato */
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Light grey background */
-    color: #333; /* Dark grey text */
+    background-color: #f4f4f4;
+    color: #333;
     line-height: 1.6;
 }
 
@@ -21,8 +21,8 @@ body {
 }
 
 header {
-    background: #222; /* Dark header background */
-    color: #fff; /* White header text */
+    background: #222;
+    color: #fff;
     padding-top: 30px;
     padding-bottom: 30px;
     text-align: center;
@@ -35,13 +35,23 @@ header h1 {
 
 header p {
     font-size: 1.2em;
-    color: #ddd; /* Lighter grey for subtitle */
+    color: #ddd;
 }
 
 nav {
-    background: #333; /* Slightly lighter dark grey nav background */
+    background: #333;
     color: #fff;
     padding: 10px 0;
+}
+
+nav .container {
+    display: flex; /* Enable flexbox for nav container */
+    justify-content: space-between; /* Space out menu toggle and nav links */
+    align-items: center; /* Vertically align items in nav container */
+}
+
+.menu-toggle {
+    display: none; /* Initially hide menu toggle on desktop */
 }
 
 nav ul {
@@ -62,7 +72,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #00bcd4; /* Teal hover color */
+    color: #00bcd4;
 }
 
 section {
@@ -70,7 +80,7 @@ section {
 }
 
 #hero {
-    background: #e1f5fe; /* Very light blue hero background */
+    background: #e1f5fe;
     color: #333;
     text-align: center;
 }
@@ -88,7 +98,7 @@ section {
 .button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #00bcd4; /* Teal button color */
+    background-color: #00bcd4;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -96,11 +106,11 @@ section {
 }
 
 .button:hover {
-    background-color: #008394; /* Darker teal on hover */
+    background-color: #008394;
 }
 
 #projects {
-    background: #fff; /* White projects section background */
+    background: #fff;
 }
 
 #projects h2, #resume h2, #about h2, #contact h2 {
@@ -112,31 +122,29 @@ section {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
-/* Style for the link wrapping the project card */
 .project-card-link {
-    text-decoration: none; /* Remove default link underline */
-    color: inherit; /* Inherit text color from body */
-    display: block; /* Make the link fill the grid space */
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .project-card {
-    background: #f9f9f9; /* Light grey project card background */
+    background: #f9f9f9;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out; /* Add smooth hover effect */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
 }
 
 .project-card:hover {
-    transform: scale(1.03); /* Slightly scale up on hover */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-
 
 .project-card img {
     width: 100%;
@@ -153,7 +161,7 @@ section {
 .project-card p {
     padding: 0 15px 15px;
     margin: 0;
-    color: #666; /* Medium grey project description text */
+    color: #666;
 }
 
 .resume-embed {
@@ -161,7 +169,7 @@ section {
 }
 
 #about {
-    background: #e0f7fa; /* Very light teal about section background */
+    background: #e0f7fa;
 }
 
 .about-content {
@@ -179,11 +187,11 @@ section {
 
 .about-text p {
     font-size: 1.1em;
-    color: #444; /* Slightly darker grey about text */
+    color: #444;
 }
 
 #contact {
-    background: #fff; /* White contact section background */
+    background: #fff;
     text-align: center;
 }
 
@@ -200,9 +208,8 @@ section {
     text-decoration: underline;
 }
 
-
 footer {
-    background: #222; /* Dark footer background */
+    background: #222;
     color: #fff;
     text-align: center;
     padding: 20px 0;
@@ -212,7 +219,7 @@ footer {
 /* --- Media Queries for Mobile Responsiveness --- */
 @media (max-width: 768px) {
     .container {
-        width: 95%; /* Wider container on mobile */
+        width: 95%;
         padding: 10px 0;
     }
 
@@ -222,110 +229,120 @@ footer {
     }
 
     header h1 {
-        font-size: 2em; /* Smaller header font on mobile */
+        font-size: 2em;
     }
 
     header p {
-        font-size: 1em; /* Smaller subtitle font on mobile */
+        font-size: 1em;
+    }
+
+    nav .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        width: 30px;
+        height: 25px;
+        margin-right: 20px;
+    }
+
+    .bar {
+        height: 3px;
+        width: 100%;
+        background-color: #fff;
+        margin-bottom: 4px;
+        display: block;
     }
 
     nav ul {
-        text-align: left; /* Align navigation to left on mobile */
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
     }
 
     nav li {
-        display: block; /* Stack navigation links vertically on mobile */
-        padding: 10px 0;
-        text-align: left;
+        display: block;
+        text-align: center;
+        padding: 0;
     }
 
     nav a {
-        font-size: 1em; /* Adjust nav link font size on mobile */
-        display: block; /* Make nav links full width for easier tapping */
-        padding: 5px 15px;
+        padding: 10px 15px;
+        display: block;
+        border-top: 1px solid #444;
+    }
+
+    nav a:hover {
+        background-color: #444;
+        color: #fff;
+    }
+
+    nav ul.menu-open {
+        display: flex;
     }
 
     #hero {
-        padding: 40px 0; /* Less padding for hero on mobile */
+        padding: 40px 0;
     }
 
     #hero h2 {
-        font-size: 1.8em; /* Smaller hero title on mobile */
+        font-size: 1.8em;
     }
 
     #hero p {
-        font-size: 1em; /* Smaller hero text on mobile */
+        font-size: 1em;
     }
 
     .projects-grid {
-        grid-template-columns: repeat(2, 1fr); /* Two column project grid on mobile */
-        gap: 15px; /* Reduce gap slightly for two columns */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
 
     .about-content {
-        flex-direction: column; /* Stack about content vertically on mobile */
-        text-align: center; /* Center align text in about section on mobile */
+        flex-direction: column;
+        text-align: center;
     }
 
     .profile-pic {
-        width: 150px; /* Smaller profile pic on mobile */
+        width: 150px;
         height: 150px;
-        margin-bottom: 20px; /* Add margin below profile pic */
+        margin-bottom: 20px;
     }
 
     .about-text p {
-        font-size: 1em; /* Smaller about text on mobile */
+        font-size: 1em;
     }
 
     #resume .resume-embed iframe {
-        height: 600px; /* Adjust iframe height for mobile */
+        height: 600px;
     }
 
     #projects h2, #resume h2, #about h2, #contact h2 {
-        font-size: 1.7em; /* Smaller section titles on mobile */
+        font-size: 1.7em;
         margin-bottom: 25px;
     }
 
     section {
-        padding: 40px 0; /* Less section padding on mobile */
+        padding: 40px 0;
     }
 
     footer {
-        padding: 15px 0; /* Less footer padding on mobile */
-        font-size: 0.8em; /* Smaller footer font on mobile */
+        padding: 15px 0;
+        font-size: 0.8em;
     }
 }
 
-/* Electrical Engineering Theme Accents (Optional - Add to relevant sections) */
-
-/* Example: Circuit board background for body (subtle) */
-/* body {
-    background-image: url('circuit-board-pattern.png'); /* Replace with your pattern image */
-    /* background-size: cover;
-    background-repeat: repeat;
-    background-blend-mode: multiply; /* To subtly blend pattern with background color */
-/* } */
-
-/* Example: Highlight color for links and accents */
+/* Electrical Engineering Theme Accents (Optional) */
 a {
-    color: #00bcd4; /* Teal link color */
+    color: #00bcd4;
 }
 
 a:hover {
     color: #008394;
-}
-
-/* Example:  Use a font that suggests technical feel */
-/* body { font-family: 'Courier New', monospace; } /* Monospace font for code/technical look */
-
-
-/* --- Collapsible Sections Styling --- */
-.collapsible-section {
-    display: none; /* Initially hide collapsible sections */
-    overflow: hidden; /* Prevent content from overflowing when collapsing/expanding */
-}
-
-/* Optional: Style for navigation links to indicate they are toggles */
-nav a {
-    cursor: pointer; /* Change cursor to pointer on nav links */
 }
