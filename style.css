@@ -359,3 +359,8 @@ a {
 a:hover {
     color: #008394;
 }
+
+/* Project Detail Page Hero Section Centering */
+#project-detail-hero .container {
+    text-align: center; /* Center align text and inline elements */
+}
