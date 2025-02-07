@@ -317,3 +317,15 @@ a:hover {
 
 /* Example:  Use a font that suggests technical feel */
 /* body { font-family: 'Courier New', monospace; } /* Monospace font for code/technical look */
+
+
+/* --- Collapsible Sections Styling --- */
+.collapsible-section {
+    display: none; /* Initially hide collapsible sections */
+    overflow: hidden; /* Prevent content from overflowing when collapsing/expanding */
+}
+
+/* Optional: Style for navigation links to indicate they are toggles */
+nav a {
+    cursor: pointer; /* Change cursor to pointer on nav links */
+}
