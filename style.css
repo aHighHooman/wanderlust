@@ -45,8 +45,8 @@ nav {
 }
 
 nav .container {
-    display: flex;
-    justify-content: space-between;
+    display: flex; /* Add display flex to container */
+    justify-content: center; /* Center ul horizontally in nav container */
     align-items: center;
 }
 
@@ -238,7 +238,7 @@ footer {
 
     nav .container {
         display: flex;
-        justify-content: space-between;
+        justify-content: center; /* Change to center to align ul horizontally */
         align-items: center;
     }
 
@@ -264,7 +264,7 @@ footer {
         width: 100%;
         margin-top: 10px;
         text-align: center;
-        align-items: center;
+        align-items: center; /* Center the list items horizontally */
     }
 
     nav li {
@@ -340,12 +340,12 @@ footer {
 
     /* Project Detail Page Specific Styles (Mobile Image Scaling) */
     .project-hero-image {
-        max-width: 100%; /* Make hero image scale down to container width */
-        height: auto; /* Maintain aspect ratio */
+        max-width: 100%;
+        height: auto;
     }
 
     .project-visuals-grid img {
-        max-width: 100%; /* Make images in visuals grid scale down */
+        max-width: 100%;
         height: auto;
     }
 }
