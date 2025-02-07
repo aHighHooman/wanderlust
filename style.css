@@ -58,6 +58,7 @@ nav ul {
     margin: 0;
     padding: 0;
     text-align: center;
+    width: 100%; /* Make ul take full width of container */
 }
 
 nav li {
