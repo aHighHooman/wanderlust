@@ -11,28 +11,33 @@
     <button id="checklist-toggle">Checklist</button>
     <!-- Checklist Code (End)-->
 
+    <!-- Sidebar Code (Start)-->
+    <div id="menu-toggle" class="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    
+    <aside id="sidebar">
+        <nav id="sidebar-nav">
+            <ul id = "sidebarList">
+                <li class = "sidebarItem"><a id="sidebarLink" href="Projects.html">Projects</a></li>
+                <li class = "sidebarItem"><a id="sidebarLink" href="#resume">Resume</a></li>
+                <li class = "sidebarItem"><a id="sidebarLink" href="#about">About Me</a></li>
+                <li class = "sidebarItem"><a id="sidebarLink" href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </aside>
+    
+    <script src="index.js"></script>    
+    <!-- Sidebar Code (End)-->
+
     <header>
         <div class="container">
             <h1>Umair Aadil</h1>
             <p>Electrical Engineering Student</p>
         </div>
     </header>
-
-    <nav>
-        <div class="container">
-            <div class="menu-toggle">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-            <ul>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
 
     <section id="projects">
         <div class="container">
@@ -115,12 +120,6 @@
             <p>&copy; 2025 Umair Aadil. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('nav ul').classList.toggle('menu-open');
-        });
-    </script>
 
 
     <!-- This is the JS Inclusion (START)-->
