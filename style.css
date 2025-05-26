@@ -111,14 +111,14 @@ section {
 }
 
 #projects {
-    background: #fff;
+    background: var(--text-primary);
 }
 
 #projects h2, #resume h2, #about h2, #contact h2 {
     text-align: center;
     margin-bottom: 30px;
     font-size: 2em;
-    color: #333;
+    color: var(--text-primary);
 }
 
 .projects-grid {
@@ -188,7 +188,7 @@ section {
 
 .about-text p {
     font-size: 1.1em;
-    color: #444;
+    color: var(--text-primary);
 }
 
 #contact {
@@ -364,3 +364,299 @@ a:hover {
 #project-detail-hero .container {
     text-align: center; /* Center align text and inline elements */
 }
+
+
+/* This is Checklist CSS (START)*/
+  #checklist h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+  .checklist-input {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .checklist-input input {
+    width: 60%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+  }
+  .checklist-input button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: #0077cc;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+  }
+  .checklist-input button:hover {
+    background: #005fa3;
+  }
+  
+  #items-list {
+    list-style: none;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  #items-list li {
+    background: #fff;
+    margin-bottom: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  #items-list li input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+    border: 2px solid #0077cc;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+  }
+  #items-list li input[type="checkbox"]:checked {
+    background: #0077cc;
+    border-color: #0077cc;
+  }
+  #items-list li input[type="checkbox"]:checked::after {
+    content: '✔';
+    position: absolute;
+    top: -3px;
+    left: 3px;
+    color: #fff;
+    font-size: 1rem;
+  }
+  #items-list li span {
+    flex-grow: 1;
+    font-size: 1rem;
+  }
+  #items-list li button.delete-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #cc0000;
+    cursor: pointer;
+  }
+  #items-list li button.delete-btn:hover {
+    color: #a30000;
+  }
+
+  #checklist {
+    position: fixed;
+    top: 80px;        /* distance from top of viewport */
+    right: 20px;      /* distance from right edge */
+    width: 250px;     /* or whatever fits your layout */
+    background: #f9f9f9;
+    padding: 0.1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;    /* sit above other content */
+    max-height: 70vh; /* don't overflow the screen */
+    overflow-y: auto; /* scroll if too many items */
+  }
+  #checklist.dragging {
+    cursor: grabbing;
+  }
+  /* Optional: shrink the heading */
+  #checklist h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* If you want to hide it on small screens */
+  @media (max-width: 768px) {
+    #checklist {
+      display: none;
+    }
+  }
+
+  #checklist-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #0077cc;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  #checklist {
+    display: none; /* start hidden */
+  }
+  #checklist.open {
+    display: block;
+  }
+/* This is Checklist CSS (END)*/
+
+
+/* This is the Dark Mode Override (START)*/
+/* ==============================
+   Night-Mode Overrides
+   ============================== */
+
+/* 1. CSS variables for easy tweaks */
+:root {
+    --bg-primary:   #121417;  /* overall page background */
+    --bg-secondary: #1e1f26;  /* sections, cards, panels */
+    --bg-accent:    #2a2c34;  /* inputs, hover states */
+    --text-primary: #e4e6eb;  /* main body text */
+    --text-secondary: #a0a3ab;/* captions, less-important text */
+    --link-color:   #6aa3ff;  /* links & buttons */
+    --link-hover:   #8bbdff;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* 2. Base page */
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+  a {
+    color: var(--link-color);
+  }
+  a:hover {
+    color: var(--link-hover);
+  }
+  
+  /* 3. Header & Nav */
+  header {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+  }
+  nav {
+    background: var(--bg-secondary);
+  }
+  nav a {
+    color: var(--text-primary);
+  }
+  nav a:hover {
+    color: var(--link-color);
+  }
+  
+  /* 4. Sections */
+  section, .project-card, .resume-embed, .about-content, .contact-info {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+  }
+  section h2, .project-card h3 {
+    color: var(--text-primary);
+  }
+  
+  /* 5. Buttons */
+  .button,
+  .checklist-input button,
+  #checklist-toggle {
+    background-color: var(--link-color);
+    color: #fff;
+  }
+  .button:hover,
+  .checklist-input button:hover,
+  #checklist-toggle:hover {
+    background-color: var(--link-hover);
+  }
+  
+  /* 6. Inputs & Iframes */
+  input, textarea, select, iframe {
+    background: var(--bg-accent);
+    color: var(--text-primary);
+    border: 1px solid var(--bg-secondary);
+  }
+  input::placeholder {
+    color: var(--text-secondary);
+  }
+  
+  /* 7. Cards & Boxes */
+  .project-card,
+  #checklist {
+    box-shadow: 0 4px 12px var(--shadow-color);
+  }
+  
+  /* 8. Footer */
+  footer {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+  }
+  
+  /* ==============================
+     Checklist-Specific Night-Mode
+     ============================== */
+  
+  #checklist {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+  }
+  #checklist h2 {
+    color: var(--text-primary);
+  }
+  .checklist-input input {
+    background: var(--bg-accent);
+    border: 1px solid var(--bg-secondary);
+    color: var(--text-primary);
+  }
+  .checklist-input button {
+    background: var(--link-color);
+    color: #fff;
+  }
+  
+  /* List items */
+  #items-list li {
+    background: var(--bg-accent);
+    box-shadow: 0 2px 4px var(--shadow-color);
+  }
+  #items-list li span {
+    color: var(--text-primary);
+  }
+  #items-list li button.delete-btn {
+    color: #ff6b6b;
+  }
+  #items-list li button.delete-btn:hover {
+    color: #ff4c4c;
+  }
+  /* Checkbox border & checkmark */
+  #items-list li input[type="checkbox"] {
+    border-color: var(--link-color);
+  }
+  #items-list li input[type="checkbox"]:checked {
+    background: var(--link-color);
+  }
+  
+  /* ==============================
+     Final Touches
+     ============================== */
+  
+  /* Sections you had bright backgrounds—override them: */
+  #projects,
+  #contact,
+  #about {
+    background: var(--bg-secondary);
+  }
+  
+  /* Hero (if you have one) */
+  #hero {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+  }
+  
+  /* Scrollbar (optional darker track/thumb) */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-w
+  #projects h2,
+#resume h2,
+#about h2,
+#contact h2 {
+  color: var(--text-primary) !important;
+}
+  
+/* This is the Dark Mode Override (END)*/
