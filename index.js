@@ -57,8 +57,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const toggleBtn = document.getElementById('checklist-toggle');
+    let checklistShowing = false;
     toggleBtn.addEventListener('click', () => {
-    document.getElementById('checklist').classList.toggle('open');
+        if (!checklistShowing) {
+            document.getElementById('checklist').classList.add('open');
+            checklistShowing = true;
+        } else {
+            document.getElementById('checklist').classList.remove('open');
+            checklistShowing = false;
+        }
     });
   
 
@@ -143,6 +150,25 @@ document.addEventListener('DOMContentLoaded', () => {
         animFrameId = null;
     }
     }
+    // This is Checklist JS (END)
+
+    // Sidebar Code (START)
+    const sidebar = document.getElementById('sidebar');
+    const openBtn = document.getElementById('menu-toggle');
+    const closeBtn = document.getElementById('sidebar-close');
+
+    openBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        sidebar.classList.add('active');
+    });
+
+    document.addEventListener('click', (e) => {
+        if (openBtn.contains(e.target) || !sidebar.contains(e.target)){
+            sidebar.classList.remove('active');
+        }
+    });
+
+
+    // Sidebar Code (END)
 
 });
-// This is Checklist JS (END)
