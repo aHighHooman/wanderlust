@@ -3,75 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Non Player Characters</title> <link rel="stylesheet" href="style.css"> </head>
+    <title>[Project Title] - Electrical Engineering Portfolio</title> <link rel="stylesheet" href="projectStyle.css"> </head>
 <body>
+    <!-- TEMPLATE (START) --------------------------------------------->
+    <!-- Checklist Code (Start)-->
+    <button id="checklist-toggle">Checklist</button>
+    <!-- Checklist Code (End)-->
 
-    <header>
+    <!-- This is the checklist code (START) -->
+    <section id="checklist">
         <div class="container">
-            <h1>Umair Aadil</h1>
-            <p>Aspiring Electrical Engineer</p>
+        <h2 id="checklistH2">My Checklist</h2>
+        <div class="checklist-input">
+            <input type="text" id="new-item" placeholder="Add a new task…" />
+            <button id="add-btn">Add</button>
         </div>
-    </header>
-
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="index.html#projects">Projects</a></li> <li><a href="index.html#resume">Resume</a></li>
-                <li><a href="index.html#about">About Me</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
+        <ul id="items-list"></ul>
         </div>
-    </nav>
-
-    <section id="project-detail-hero"> <div class="container">
-            <h2>Non Player Characters</h2> <p class="project-subtitle">Brief Subtitle or Tagline for Project</p> <img src="images/lightRender.PNG" alt="Project Hero Image" class="project-hero-image"> </div>
     </section>
+    <!-- This is the checklist code (END) -->
 
-    <h1 id="data-structures">Data Structures</h1>
-<h2 id="relationships">Relationships</h2>
-<ul>
-<li>Classification Parameters: <ul>
-<li>Like</li>
-<li>Love</li>
-<li>Trust</li>
-<li>Attraction</li>
-<li>Unique Tag (Family , Spouse)</li>
-</ul>
-</li>
-</ul>
-<h3 id="like-class-this-is-sufficient-for-all-non-romantic-connections-">Like Class (This is sufficient for all non-romantic connections)</h3>
-<ul>
-<li>Nemesis       (Full Hostile Action Set Open)</li>
-<li>Hostile</li>
-<li>Stranger      (Minimum Action Set)</li>
-<li>Acquintance</li>
-<li>Friend        (Full Basic Action Set Open) </li>
-</ul>
-<h3 id="trust-class">Trust Class</h3>
-<ul>
-<li>Stranger</li>
-<li>...</li>
-<li>Close </li>
-</ul>
-<h3 id="unique-tags-these-are-tags-which-require-specific-preconditions-and-cannot-be-acquired-simply-with-like-or-trust-class-">Unique Tags (These are tags which require specific preconditions and cannot be acquired simply with like or trust class)</h3>
-<ul>
-<li>Love (Special Tag requiring family or ceremony (marriage))</li>
-<li>Confidant (Only One; for top class trust)</li>
-<li>Best Friend (Only One; for top class like)</li>
-<li>Romantic Interest (Only One; for top class attraction)</li>
-</ul>
-<h2 id="personality-types">Personality Types</h2>
-<p>{Openness , Conscientiousness, Extraversion, Agreeableness, Neuroticism}</p>
-<ul>
-<li>Average          </li>
-<li>Resilient        </li>
-<li>Well Rounded     </li>
-<li>Overcontrolled   </li>
-<li>Undercontrolled  </li>
-<li>Reserved         </li>
-<li>Excitable        </li>
-</ul>
+    <!-- Sidebar Code (Start)-->
+    <div id="menu-toggle" class="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
 
+    <aside id="sidebar">
+        <nav id="sidebar-nav">
+            <ul id = "sidebarList">
+                <li class = "sidebarItem"><a id="sidebarLink" href="#projects">Projects</a></li>
+                <li class = "sidebarItem"><a id="sidebarLink" href="#resume">Resume</a></li>
+                <li class = "sidebarItem"><a id="sidebarLink" href="#about">About Me</a></li>
+                <li class = "sidebarItem"><a id="sidebarLink" href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- Sidebar Code (End)-->
+
+    <!-- This is the JS Inclusion (START)-->
+    <script src="index.js"></script>
+    <!-- This is the JS Inclusion (END)-->
+     
+    <!-- TEMPLATE (END) --------------------------------------------->
+    
+    <h1>Data Structures</h1>    
+        <h2>Relationships</h2>
+            <p>Classification Parameters: </p>
+            <ul>
+                <li>Like</li>
+                <li>Love</li>
+                <li>Trust</li>
+                <li>Attraction</li>
+                <li>Unique Tag (Family , Spouse)</li>
+            </ul>
+            
+        
+        <h3>Like Parameter (This is sufficient for all non-romantic connections)</h3>
+        <ul>
+            <li>Nemesis       (Full Hostile Action Set Open)</li>
+            <li>Hostile                                     </li>
+            <li>Stranger      (Minimum Action Set)          </li>
+            <li>Acquintance                                 </li>
+            <li>Friend        (Full Basic Action Set Open)  </li>
+        </ul>
+
+        <h3>Trust Class</h3>
+        <ul>
+            <li>Stranger    </li>
+            <li>...         </li>
+            <li>Close       </li>
+        </ul>
+
+        <h3>Unique Tags (These are tags which require specific preconditions and cannot be acquired simply with like or trust class)</h3>
+        <ul>
+            <li>Love (Special Tag requiring family or ceremony (marriage))  </li>
+            <li>Confidant (Only One; for top class trust)                   </li>
+            <li>Best Friend (Only One; for top class like)                  </li>
+            <li>Romantic Interest (Only One; for top class attraction)      </li>
+        </ul>
+        </p>    
+   
+        <h2>Personality Types</h2>
+            <p>{Openness , Conscientiousness, Extraversion, Agreeableness, Neuroticism}</p>
+            <ul>
+                <li>Average          </li>
+                <li>Resilient        </li>
+                <li>Well Rounded     </li>
+                <li>Overcontrolled   </li>
+                <li>Undercontrolled  </li>
+                <li>Reserved         </li>
+                <li>Excitable        </li>
+            </ul>
 
 
     <footer>
