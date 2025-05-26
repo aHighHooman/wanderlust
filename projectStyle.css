@@ -1,0 +1,289 @@
+:root {
+    --bg-primary:   #121417;  /* overall page background */
+    --bg-secondary: #1e1f26;  /* sections, cards, panels */
+    --bg-accent:    #2a2c34;  /* inputs, hover states */
+    --text-primary: #e4e6eb;  /* main body text */
+    --text-secondary: #a0a3ab;/* captions, less-important text */
+    --link-color:   #6aa3ff;  /* links & buttons */
+    --link-hover:   #8bbdff;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    color: var(--text-primary);
+}
+
+h2 {
+    margin-top: 4rem;
+    position: relative;
+    left: 10px;
+    color: var(--text-primary);
+    text-align: left;
+}
+
+h3 {
+    margin-top: 1rem;
+    position: relative;
+    left: 15px;
+    color: var(--text-primary);
+    text-align: left;
+}
+
+
+
+#items-list {
+    margin-top: 0rem;
+    position: relative;
+    left: 0px;
+    color: var(--text-primary);
+    text-align: left;
+}
+
+
+
+
+
+/*Checklist / Sidebar*/
+
+
+/* This is Checklist CSS (START)*/
+#checklist h2 {
+    color: var(--text-primary);
+    text-align: center;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+  .checklist-input {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .checklist-input input {
+    width: 60%;
+    padding: 0.5rem 1rem;
+    background: var(--bg-accent);
+    border: 1px solid var(--bg-secondary);
+    color: var(--text-primary);
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+  }
+  .checklist-input button {
+    background: var(--link-color);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+  }
+  .checklist-input button:hover {
+    background: #005fa3;
+  }
+  
+  #items-list {
+    list-style: none;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  #items-list li {
+    background: var(--bg-accent);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    margin-bottom: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+  }
+  #items-list li input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+    border: 2px solid #0077cc;
+    border-color: var(--link-color);
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+  }
+  #items-list li input[type="checkbox"]:checked {
+    background: var(--link-color);
+    border-color: #0077cc;
+  }
+  #items-list li input[type="checkbox"]:checked::after {
+    content: '✔';
+    position: absolute;
+    top: -3px;
+    left: 3px;
+    color: #fff;
+    font-size: 1rem;
+  }
+  #items-list li span {
+    color: var(--text-primary);
+    flex-grow: 1;
+    font-size: 1rem;
+  }
+  #items-list li button.delete-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #ff6b6b;
+    cursor: pointer;
+  }
+  #items-list li button.delete-btn:hover {
+    color: #ff4c4c;
+  }
+
+  #checklist {
+    position: fixed;
+    top: 80px;        /* distance from top of viewport */
+    right: 20px;      /* distance from right edge */
+    width: 250px;     /* or whatever fits your layout */
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;    /* sit above other content */
+    max-height: 70vh; /* don't overflow the screen */
+    overflow-y: auto; /* scroll if too many items */
+  }
+  #checklist.dragging {
+    cursor: grabbing;
+  }
+  /* Optional: shrink the heading */
+  #checklist h2 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* If you want to hide it on small screens */
+  @media (max-width: 768px) {
+    #checklist {
+      display: none;
+    }
+  }
+
+  #checklist-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #0077cc;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  #checklist {
+    display: none; /* start hidden */
+  }
+  #checklist.open {
+    display: block;
+  }
+/* This is Checklist CSS (END)*/
+
+
+
+/* Sidebar Code (START) */
+/* Sidebar base */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -290px;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(34, 34, 34, 0.75); /* Dark background with 75% opacity */
+    backdrop-filter: blur(10px); /* This creates the frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari browser support */
+    border-right: 1px solid rgba(255, 255, 255, 0.1); /* A subtle edge to catch the light */
+    transition: left 0.3s ease;
+    z-index: 1500;
+    padding: 20px;
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+/* --- Corrected Sidebar Navigation --- */
+
+#sidebar-nav  {
+    background-color: transparent;
+    list-style: none; /* Removes bullet points */
+}
+
+/*The Position of the list inside the sidebar*/
+#sidebarList  {
+    position: relative;
+    top: 10px;
+    background-color: transparent;
+}
+
+/*Top affects the distance between each element and left is the offset from the screen*/
+#sidebarItem {
+    position: relative;
+    top: 20px;
+    left: 0px;
+    background-color: transparent;
+}
+
+#sidebarLink {
+    display: block;  /* Fixes the layout issue (was 'box') */
+    text-decoration: none; /* Removes the underline */
+    color: #efefef; /* A slightly softer white */
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    /* The Glow Effect! - This was the missing piece */
+    text-shadow: 
+        0 0 1px rgba(255, 255, 255, 0.7),
+        0 0 1px rgba(0, 188, 212, 0.6);
+}
+
+#sidebarLink:hover {
+    text-shadow: 
+        0 0 8px rgba(255, 255, 255, 1),
+        0 0 25px rgba(0, 188, 212, 1);
+}
+
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 2000;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 35px;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 2px 0;
+    border-radius: 4px;
+} 
+/* Sidebar Code (END) */
