@@ -658,5 +658,89 @@ a:hover {
 #contact h2 {
   color: var(--text-primary) !important;
 }
-  
 /* This is the Dark Mode Override (END)*/
+
+/* Sidebar Code (START) */
+/* Sidebar base */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -290px;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(34, 34, 34, 0.75); /* Dark background with 75% opacity */
+    backdrop-filter: blur(10px); /* This creates the frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari browser support */
+    border-right: 1px solid rgba(255, 255, 255, 0.1); /* A subtle edge to catch the light */
+    transition: left 0.3s ease;
+    z-index: 1500;
+    padding: 20px;
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+/* --- Corrected Sidebar Navigation --- */
+
+#sidebar-nav  {
+    background-color: transparent;
+    list-style: none; /* Removes bullet points */
+}
+
+/*The Position of the list inside the sidebar*/
+#sidebarList  {
+    position: relative;
+    top: 10px;
+    background-color: transparent;
+}
+
+/*Top affects the distance between each element and left is the offset from the screen*/
+#sidebarItem {
+    position: relative;
+    top: 20px;
+    left: 0px;
+    background-color: transparent;
+}
+
+#sidebarLink {
+    display: block;  /* Fixes the layout issue (was 'box') */
+    text-decoration: none; /* Removes the underline */
+    color: #efefef; /* A slightly softer white */
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    /* The Glow Effect! - This was the missing piece */
+    text-shadow: 
+        0 0 1px rgba(255, 255, 255, 0.7),
+        0 0 1px rgba(0, 188, 212, 0.6);
+}
+
+#sidebarLink:hover {
+    text-shadow: 
+        0 0 8px rgba(255, 255, 255, 1),
+        0 0 25px rgba(0, 188, 212, 1);
+}
+
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 2000;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 35px;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 2px 0;
+    border-radius: 4px;
+} 
+/* Sidebar Code (END) */
