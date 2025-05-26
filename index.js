@@ -70,86 +70,105 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
     // ——— Draggable with Momentum ———
-    const checklist = document.getElementById('checklist');
+    // ——— Draggable with Momentum ———
+    const checklist = document.getElementById('checklist');
 
-    let isDragging    = false;
-    let dragOffsetX   = 0;
-    let dragOffsetY   = 0;
-    let lastPos       = { x: 0, y: 0, t: 0 };
-    let velocity      = { x: 0, y: 0 };
-    let animFrameId   = null;
+    let isDragging    = false;
+    let dragOffsetX   = 0;
+    let dragOffsetY   = 0;
+    let lastPos       = { x: 0, y: 0, t: 0 };
+    let velocity      = { x: 0, y: 0 };
+    let animFrameId   = null;
 
-    // Mouse down: start drag
-    checklist.addEventListener('mousedown', e => {
-    cancelInertia();
-    isDragging = true;
-    checklist.classList.add('dragging');
-    const rect = checklist.getBoundingClientRect();
-    dragOffsetX = e.clientX - rect.left;
-    dragOffsetY = e.clientY - rect.top;
-    lastPos = { x: e.clientX, y: e.clientY, t: performance.now() };
-    });
+    function getClientX(event) {
+        return event.clientX !== undefined ? event.clientX : event.touches[0].clientX;
+    }
 
-    // Mouse move: update position, compute velocity
-    document.addEventListener('mousemove', e => {
-    if (!isDragging) return;
-    const now = performance.now();
-    const dt  = now - lastPos.t || 16;
-    // current velocity (px/ms)
-    velocity.x = (e.clientX - lastPos.x) / dt;
-    velocity.y = (e.clientY - lastPos.y) / dt;
-    lastPos = { x: e.clientX, y: e.clientY, t: now };
-    // move checklist
-    moveTo(e.clientX - dragOffsetX, e.clientY - dragOffsetY);
-    });
+    function getClientY(event) {
+        return event.clientY !== undefined ? event.clientY : event.touches[0].clientY;
+    }
 
-    // Mouse up: end drag & kick off inertia
-    document.addEventListener('mouseup', () => {
-    if (!isDragging) return;
-    isDragging = false;
-    checklist.classList.remove('dragging');
-    startInertia();
-    });
+    function startDrag(event) {
+        cancelInertia();
+        isDragging = true;
+        checklist.classList.add('dragging');
+        const rect = checklist.getBoundingClientRect();
+        dragOffsetX = getClientX(event) - rect.left;
+        dragOffsetY = getClientY(event) - rect.top;
+        lastPos = { x: getClientX(event), y: getClientY(event), t: performance.now() };
+    }
 
-    // Clamp and apply position
-    function moveTo(x, y) {
-    const { innerWidth: wW, innerHeight: wH } = window;
-    const rect = checklist.getBoundingClientRect();
-    // clamp
-    x = Math.min(Math.max(0, x), wW - rect.width);
-    y = Math.min(Math.max(0, y), wH - rect.height);
-    checklist.style.left = x + 'px';
-    checklist.style.top  = y + 'px';
-    }
+    function drag(event) {
+        if (!isDragging) return;
+        const now = performance.now();
+        const dt  = now - lastPos.t || 16;
+        // current velocity (px/ms)
+        velocity.x = (getClientX(event) - lastPos.x) / dt;
+        velocity.y = (getClientY(event) - lastPos.y) / dt;
+        lastPos = { x: getClientX(event), y: getClientY(event), t: now };
+        // move checklist
+        moveTo(getClientX(event) - dragOffsetX, getClientY(event) - dragOffsetY);
+    }
 
-    // Inertia loop
-    function startInertia() {
-    const friction = 0.95;       // lower = quicker stop
-    const minSpeed = 0.02;       // px/ms threshold to stop
-    function step() {
-        velocity.x *= friction;
-        velocity.y *= friction;
-        // if too slow, stop
-        if (Math.hypot(velocity.x, velocity.y) < minSpeed) {
-        cancelInertia();
-        return;
-        }
-        // compute new pos
-        const rect = checklist.getBoundingClientRect();
-        let newX = rect.left + velocity.x * 16;  // assume ~60fps => 16ms/frame
-        let newY = rect.top  + velocity.y * 16;
-        moveTo(newX, newY);
-        animFrameId = requestAnimationFrame(step);
-    }
-    animFrameId = requestAnimationFrame(step);
-    }
+    function endDrag() {
+        if (!isDragging) return;
+        isDragging = false;
+        checklist.classList.remove('dragging');
+        startInertia();
+    }
 
-    function cancelInertia() {
-    if (animFrameId != null) {
-        cancelAnimationFrame(animFrameId);
-        animFrameId = null;
-    }
-    }
+    // Mouse down: start drag
+    checklist.addEventListener('mousedown', startDrag);
+    checklist.addEventListener('touchstart', startDrag);
+
+    // Mouse move: update position, compute velocity
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('touchmove', drag);
+
+    // Mouse up: end drag & kick off inertia
+    document.addEventListener('mouseup', endDrag);
+    document.addEventListener('touchend', endDrag);
+
+    // Clamp and apply position
+    function moveTo(x, y) {
+        const { innerWidth: wW, innerHeight: wH } = window;
+        const rect = checklist.getBoundingClientRect();
+        // clamp
+        x = Math.min(Math.max(0, x), wW - rect.width);
+        y = Math.min(Math.max(0, y), wH - rect.height);
+        checklist.style.left = x + 'px';
+        checklist.style.top  = y + 'px';
+    }
+
+    // Inertia loop
+    function startInertia() {
+        const friction = 0.95;       // lower = quicker stop
+        const minSpeed = 0.02;       // px/ms threshold to stop
+        function step() {
+            velocity.x *= friction;
+            velocity.y *= friction;
+            // if too slow, stop
+            if (Math.hypot(velocity.x, velocity.y) < minSpeed) {
+                cancelInertia();
+                return;
+            }
+            // compute new pos
+            const rect = checklist.getBoundingClientRect();
+            let newX = rect.left + velocity.x * 16;  // assume ~60fps => 16ms/frame
+            let newY = rect.top  + velocity.y * 16;
+            moveTo(newX, newY);
+            animFrameId = requestAnimationFrame(step);
+        }
+        animFrameId = requestAnimationFrame(step);
+    }
+
+    function cancelInertia() {
+        if (animFrameId != null) {
+            cancelAnimationFrame(animFrameId);
+            animFrameId = null;
+        }
+    }
+    // This is Checklist JS (END)
     // This is Checklist JS (END)
 
     // Sidebar Code (START)
