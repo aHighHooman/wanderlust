@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Checklist Code (Start)-->
+    <button id="checklist-toggle">Checklist</button>
+    <!-- Checklist Code (End)-->
 
     <header>
         <div class="container">
@@ -93,6 +96,20 @@
             </div>
     </section>
 
+    <!-- This is the checklist code (START) -->
+    <section id="checklist">
+        <div class="container">
+          <h2>My Checklist</h2>
+          <div class="checklist-input">
+            <input type="text" id="new-item" placeholder="Add a new task…" />
+            <button id="add-btn">Add</button>
+          </div>
+          <ul id="items-list"></ul>
+        </div>
+    </section>
+    <!-- This is the checklist code (END) -->
+      
+
     <footer>
         <div class="container">
             <p>&copy; 2025 Umair Aadil. All rights reserved.</p>
@@ -105,5 +122,9 @@
         });
     </script>
 
+
+    <!-- This is the JS Inclusion (START)-->
+    <script src="index.js"></script>
+    <!-- This is the JS Inclusion (END)-->
 </body>
 </html>
